@@ -30,9 +30,17 @@
 ```
 > **获取 Telegram 参数方法：**  
 > - `TELEGRAM_BOT_TOKEN`：在 Telegram 搜索 @BotFather，创建 Bot 获取 Token。  
-> - `TELEGRAM_CHAT_ID`：在 Telegram 搜索 @userinfobot，获取你的 Chat ID。
-
----
+> - `TELEGRAM_CHAT_ID`：
+首先需要给你的bot发几条任意消息，然后访问如下地址，获取id
+```
+https://api.telegram.org/bot+你的token/getUpdates
+```
+然后测试机器人推送消息：
+```
+https://api.telegram.org/bot+你的token/sendMessage?chat_id=你的id&text=要发送的测试文本
+```
+如果成功接收到机器人消息即可
+--
 
 ### 3. 触发 Workflow
 有两种方式运行：
